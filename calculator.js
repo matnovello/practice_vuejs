@@ -17,7 +17,7 @@ var app = new Vue({
     }, 
     changeSecret: function(){
       console.log(this.showSecret);
-      this.showSecret = !this.showSecret;
+     this.showSecret = !this.showSecret;
 
     }
   }

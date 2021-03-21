@@ -5,6 +5,12 @@
     <title>Vue.js Intro</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="calculator.js" defer></script>
+    <style>
+    .changeText {
+      color: rgb(21, 255, 0);
+      transition: color 4s ease;
+    }
+  </style>
   </head>
   <body>
     <div id="app">
@@ -24,8 +30,10 @@
       <div v-on:click="add"><button>Compute sum</button></div>
       <p>The sum is: {{ sum }} </p>
       {{ showSecret }}
-      <p v-if="showSecret"> Today is the day of suns. SunDaY </p>
+      <hr></hr>
+      <div v-bind:class="{changeText: showSecret}"> Today is the day of suns. SunDaY </div>
       <button v-on:click="changeSecret"> Click Me To Show The Secret Message </button>
+      <hr>
     </div>
 
   </body>
