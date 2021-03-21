@@ -13,7 +13,7 @@ var app = new Vue({
   },
   methods: {
     add: function (){
-      this.sum = parseInt(this.number1) + parseInt(this.number2);
+      this.sum = parseInt(this.number1) + parseInt(this.number2) + parseInt(this.number3);
     }, 
     changeSecret: function(){
       console.log(this.showSecret);
