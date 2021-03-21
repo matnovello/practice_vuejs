@@ -23,7 +23,10 @@
       </div>
       <div v-on:click="add"><button>Compute sum</button></div>
       <p>The sum is: {{ sum }} </p>
+      {{ showSecret }}
+      <p v-if="showSecret"> Today is the day of suns. SunDaY </p>
+      <button v-on:click="changeSecret"> Click Me To Show The Secret Message </button>
     </div>
-    <p v-if="false"></p>
+
   </body>
 </html>

@@ -7,16 +7,18 @@ var app = new Vue({
       number2: 0,
       number3: 0,
       sum: 0   ,
-      showSecret: true;
+      showSecret: true, 
 
     };
   },
   methods: {
     add: function (){
       this.sum = parseInt(this.number1) + parseInt(this.number2);
-    }
-    showSecret(){
+    }, 
+    changeSecret: function(){
+      console.log(this.showSecret);
       this.showSecret = !this.showSecret;
+
     }
   }
 });
