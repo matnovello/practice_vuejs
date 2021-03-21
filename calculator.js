@@ -8,6 +8,8 @@ var app = new Vue({
       number3: 0,
       sum: 0   ,
       showSecret: true, 
+      cookies: ["oatmeal raisin", "oreo", "chocolate chip"],
+      newCookie: "",
 
     };
   },
@@ -19,6 +21,14 @@ var app = new Vue({
       console.log(this.showSecret);
      this.showSecret = !this.showSecret;
 
-    }
+    },
+    addCookie: function() {
+      console.log(this.newCookie);
+      this.cookies.push(this.newCookie);
+    },
+    removeCookie: function() {
+      console.log(this.newCookie + " " +  "has been removed")
+      this.cookies.pop(this.newCookie);
+    },
   }
 });
