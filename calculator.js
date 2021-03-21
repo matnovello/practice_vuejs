@@ -1,3 +1,6 @@
+
+axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+
 var app = new Vue({
   el: "#app",
   data: function() {
@@ -10,7 +13,8 @@ var app = new Vue({
       showSecret: true, 
       cookies: ["oatmeal raisin", "oreo", "chocolate chip"],
       newCookie: "",
-
+      todos: [],
+      toggle: false,
     };
   },
   methods: {
@@ -30,5 +34,10 @@ var app = new Vue({
       console.log(this.newCookie + " " +  "has been removed")
       this.cookies.pop(this.newCookie);
     },
+    loadTodos: function() {
+      axios.get("https://jsonplaceholder.typicode.com/todos").then(response =>{ console.log(response.data);
+      this.todos = response.data;} ); 
+      this.toggle = !this.toggle;
+    }
   }
 });
